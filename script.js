@@ -1,4 +1,4 @@
-const startingMinutes = 5;
+const startingMinutes = 1;
 let time = startingMinutes * 60;
 
 const countdownEl = document.getElementById('countdown');
@@ -13,4 +13,8 @@ function updateCountdown () {
 
     countdownEl.innerHTML = `${minutes}: ${seconds}`;
     time--;
+
+    if (time < 0) {
+        time = startingMinutes * 60;
+    }
 }
