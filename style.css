@@ -2,17 +2,34 @@
 
 body {
     font-family: "Orbitron", sans-serif;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
     background-color: black;
 }
 
-p {
-    background-color: white;
+#container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: 200px;
-    margin: 0; 
-    height: 500px;
-    width: 700px;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    height: 700px;
+    width: 800px;
+    padding: 0px;
+    font-size: 60px;
+}
+
+#text {
+    font-size: 60px;
+}
+
+#p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
 }
