@@ -4,15 +4,22 @@ let countdownInterval;
 const counterSound = new Audio("./Sounds/timer.mp3");
 const countdownEl = document.getElementById('countdown');
 const inputEl = document.getElementById('time-input');
-const buttonEl = document.getElementById('my-button');
+const startButton = document.getElementById('my-button');
+const resetButton = document.getElementById('my-reset');
 
-buttonEl.onclick = function () {
+startButton.onclick = function () {
     const startingMinutes = parseFloat(inputEl.value);
-    time = startingMinutes * 60;
-    console.log("Timer set for", startingMinutes, "minutes");  
+    time = startingMinutes * 60; 
+
+    clearInterval(countdownInterval);
+    countdownInterval = setInterval(updateCountdown, 1000);
 }
 
-setInterval(updateCountdown, 1000);
+resetButton.onclick = function () {
+    clearInterval(countdownInterval);
+    time = 0;
+    countdownEl.textContent = "0:00";
+}
 
 function updateCountdown () {
     if (time > 0) {
